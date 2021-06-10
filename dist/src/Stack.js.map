@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/Stack.ts"],
+  "sourcesContent": ["export class PolicyStatement {\n    Effect = \"Allow\";\n    Action: string | string[];\n    Resource: string | Array<unknown>;\n    constructor(Action: string | string[], Resource: string | Array<unknown>) {\n        this.Action = Action;\n        this.Resource = Resource;\n    }\n}\n"],
+  "mappings": ";;;;;;AAAA;AAAA;AAAA;AAAA;AAAO,sBAAsB;AAAA,EAIzB,YAAY,QAA2B,UAAmC;AAH1E,kBAAS;AAIL,SAAK,SAAS;AACd,SAAK,WAAW;AAAA;AAAA;",
+  "names": []
+}

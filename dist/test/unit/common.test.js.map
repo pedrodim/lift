@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../test/unit/common.test.ts"],
+  "sourcesContent": ["import { pluginConfigExt, runServerless } from \"../utils/runServerless\";\n\ndescribe(\"common\", () => {\n    it(\"should not override user defined resources in serverless.yml\", async () => {\n        const { cfTemplate } = await runServerless({\n            fixture: \"common\",\n            configExt: pluginConfigExt,\n            cliArgs: [\"package\"],\n        });\n        expect(cfTemplate.Resources).toMatchObject({\n            UserDefinedResource: {},\n        });\n    });\n});\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA,2BAA+C;AAE/C,SAAS,UAAU,MAAM;AACrB,KAAG,gEAAgE,YAAY;AAC3E,UAAM,CAAE,cAAe,MAAM,wCAAc;AAAA,MACvC,SAAS;AAAA,MACT,WAAW;AAAA,MACX,SAAS,CAAC;AAAA;AAEd,WAAO,WAAW,WAAW,cAAc;AAAA,MACvC,qBAAqB;AAAA;AAAA;AAAA;",
+  "names": []
+}

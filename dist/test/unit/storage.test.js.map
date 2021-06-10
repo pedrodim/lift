@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../test/unit/storage.test.ts"],
+  "sourcesContent": ["import { pluginConfigExt, runServerless } from \"../utils/runServerless\";\n\ndescribe(\"storage\", () => {\n    it(\"should create an S3 bucket\", async () => {\n        const { cfTemplate, computeLogicalId } = await runServerless({\n            fixture: \"storage\",\n            configExt: pluginConfigExt,\n            cliArgs: [\"package\"],\n        });\n        expect(cfTemplate.Resources[computeLogicalId(\"avatars\", \"Bucket\")]).toMatchObject({\n            Type: \"AWS::S3::Bucket\",\n        });\n    });\n});\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA,2BAA+C;AAE/C,SAAS,WAAW,MAAM;AACtB,KAAG,8BAA8B,YAAY;AACzC,UAAM,CAAE,YAAY,oBAAqB,MAAM,wCAAc;AAAA,MACzD,SAAS;AAAA,MACT,WAAW;AAAA,MACX,SAAS,CAAC;AAAA;AAEd,WAAO,WAAW,UAAU,iBAAiB,WAAW,YAAY,cAAc;AAAA,MAC9E,MAAM;AAAA;AAAA;AAAA;",
+  "names": []
+}

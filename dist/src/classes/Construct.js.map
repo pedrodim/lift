@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/classes/Construct.ts"],
+  "sourcesContent": ["import { PolicyStatement } from \"../Stack\";\n\nexport default interface Construct {\n    outputs(): Record<string, () => Promise<string | undefined>>;\n\n    commands(): Record<string, () => void | Promise<void>>;\n\n    /**\n     * CloudFormation references\n     */\n    references(): Record<string, Record<string, unknown>>;\n\n    /**\n     * Post-CloudFormation deployment\n     */\n    postDeploy?(): Promise<void>;\n\n    /**\n     * Pre-CloudFormation deletion\n     */\n    preRemove?(): Promise<void>;\n\n    /**\n     * IAM permissions to add to Lambda functions of the stack\n     */\n    permissions?(): PolicyStatement[];\n}\n"],
+  "mappings": ";;AAAA;",
+  "names": []
+}

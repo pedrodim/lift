@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/constructs/index.ts"],
+  "sourcesContent": ["import { Storage, STORAGE_DEFINITION } from \"./Storage\";\nimport { Queue, QUEUE_DEFINITION } from \"./Queue\";\nimport { STATIC_WEBSITE_DEFINITION, StaticWebsite } from \"./StaticWebsite\";\nimport { Webhook, WEBHOOK_DEFINITION } from \"./Webhook\";\n\nexport const constructs = {\n    storage: {\n        class: Storage,\n        schema: STORAGE_DEFINITION,\n    },\n    queue: {\n        class: Queue,\n        schema: QUEUE_DEFINITION,\n    },\n    \"static-website\": {\n        class: StaticWebsite,\n        schema: STATIC_WEBSITE_DEFINITION,\n    },\n    webhook: {\n        class: Webhook,\n        schema: WEBHOOK_DEFINITION,\n    },\n};\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA,qBAA4C;AAC5C,mBAAwC;AACxC,2BAAyD;AACzD,qBAA4C;AAErC,MAAM,aAAa;AAAA,EACtB,SAAS;AAAA,IACL,OAAO;AAAA,IACP,QAAQ;AAAA;AAAA,EAEZ,OAAO;AAAA,IACH,OAAO;AAAA,IACP,QAAQ;AAAA;AAAA,EAEZ,kBAAkB;AAAA,IACd,OAAO;AAAA,IACP,QAAQ;AAAA;AAAA,EAEZ,SAAS;AAAA,IACL,OAAO;AAAA,IACP,QAAQ;AAAA;AAAA;",
+  "names": []
+}

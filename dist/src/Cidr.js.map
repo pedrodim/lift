@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/Cidr.ts"],
+  "sourcesContent": ["export const cidrVpc = \"10.0.0.0/16\";\n\n/**\n * Split in 4 (2 bits), then in 2\n * 10.0.0.0/18 - AZ A\n *     10.0.0.0/19 - Private\n *     10.0.32.0/19 - Public\n * 10.0.64.0/18 - AZ B\n *     10.0.64.0/19 - Private\n *     10.0.96.0/19 - Public\n * 10.0.128.0/18 - AZ C\n *     10.0.128.0/19 - Private\n *     10.0.160.0/19 - Public\n * 10.0.192.0/18 - Spare\n */\nexport const cidrSubnets = {\n    a: {\n        Private: \"10.0.0.0/19\",\n        Public: \"10.0.32.0/19\",\n    },\n    b: {\n        Private: \"10.0.64.0/19\",\n        Public: \"10.0.96.0/19\",\n    },\n    c: {\n        Private: \"10.0.128.0/19\",\n        Public: \"10.0.160.0/19\",\n    },\n};\n\nexport function getZoneId(availabilityZone: string): \"a\" | \"b\" | \"c\" {\n    const id = availabilityZone.substr(-1, 1);\n    if (id !== \"a\" && id !== \"b\" && id !== \"c\") {\n        throw new Error(`Availability zone ${id} is not supported (cannot generate CIDR block).`);\n    }\n\n    return id;\n}\n"],
+  "mappings": ";;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAO,MAAM,UAAU;AAehB,MAAM,cAAc;AAAA,EACvB,GAAG;AAAA,IACC,SAAS;AAAA,IACT,QAAQ;AAAA;AAAA,EAEZ,GAAG;AAAA,IACC,SAAS;AAAA,IACT,QAAQ;AAAA;AAAA,EAEZ,GAAG;AAAA,IACC,SAAS;AAAA,IACT,QAAQ;AAAA;AAAA;AAIT,mBAAmB,kBAA2C;AACjE,QAAM,KAAK,iBAAiB,OAAO,IAAI;AACvC,MAAI,OAAO,OAAO,OAAO,OAAO,OAAO,KAAK;AACxC,UAAM,IAAI,MAAM,qBAAqB;AAAA;AAGzC,SAAO;AAAA;",
+  "names": []
+}
