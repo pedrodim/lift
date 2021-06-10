@@ -74,7 +74,7 @@ class LiftPlugin {
         };
 
         this.hooks = {
-            initialize: this.appendPermissions.bind(this),
+            initialize: this.initialize.bind(this),
             "before:aws:info:displayStackOutputs": this.info.bind(this),
             "after:package:compileEvents": this.appendCloudformationResources.bind(this),
             "after:deploy:deploy": this.postDeploy.bind(this),
@@ -92,8 +92,12 @@ class LiftPlugin {
         };
 
         this.registerConfigSchema();
+    }
+
+    private initialize() {
         this.loadConstructs();
         this.registerCommands();
+        this.appendPermissions();
     }
 
     private registerConfigSchema() {
